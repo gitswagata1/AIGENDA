@@ -1,1 +1,6 @@
-streamlit>=1.26.0
+python -m streamlil --version
+python -m pip install google.generativeai
+pip show google.generativeai
+python -m pip install pillow
+apikey = < >
+streamlit run app.py
