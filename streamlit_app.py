@@ -29,22 +29,22 @@ st.sidebar.header("RoboBill")
 st.sidebar.write("Made by Swagata Banerjee")
 st.sidebar.write("powered By google gemini ai")
 st.header("Robobill")
-st.subheader("by IEEE WEI")
+st.subheader("by IEEE WIE")
 st.subheader("manage your expenses with Robobill")
 input = st.text_input ("What do you want me to do?", key = "input")
-uploaded_file = st.file_uploader("Choose an image", type=["jpg,","jpeg", "png"])
+uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
 image = " "
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption = "Uploaded Image", use_column_width= True)
 
-ssubmit = st.button("Lets Go!")
+submit = st.button("Lets Go!")
 
 input_prompt = """
-You are an expext in Invoice bill analysis
+You are an expert in Invoice bill analysis
 """
-if ssubmit:
+if submit:
     image_data = input_image_details(uploaded_file)
     response = get_gemini_response(input_prompt, image_data, input)
-    st.subheader("Here's what you nee to know!")
+    st.subheader("Here's what you need to know!")
     st.write(response)
