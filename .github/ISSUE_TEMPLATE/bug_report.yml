@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a bug
+description: Report a bug in AIGENDA
 title: "[Bug]: "
 labels: ["bug"]
 body:
@@ -15,6 +15,11 @@ body:
     attributes:
       label: Steps to Reproduce
       description: Steps to reproduce the behavior
+      placeholder: |
+        1. Upload an image...
+        2. Type a question...
+        3. Click "Let's Go!"
+        4. See error
     validations:
       required: true
   - type: textarea
@@ -22,6 +27,29 @@ body:
     attributes:
       label: Expected Behavior
       description: What you expected to happen
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened (include error messages if any)
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Windows
+        - macOS
+        - Linux
+  - type: input
+    id: python-version
+    attributes:
+      label: Python Version
+      placeholder: "3.11"
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: "Chrome 120, Firefox 121"
   - type: textarea
     id: screenshots
     attributes:
